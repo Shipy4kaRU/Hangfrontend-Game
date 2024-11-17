@@ -1,5 +1,4 @@
 /node_modules
-/docs
 package-lock.json
 gulp-build.zip
 src/styleguide
