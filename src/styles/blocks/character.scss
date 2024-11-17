@@ -1,0 +1,108 @@
+@use "../values.scss" as *;
+
+.hang {
+  width: 20em;
+  height: 15em;
+  margin: 0 auto;
+}
+
+.gallows {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.gallows__goriz {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 17em;
+  height: 0.4em;
+  background-color: black;
+}
+
+.gallows__goriz-two {
+  position: absolute;
+  top: 1.5em;
+  left: 40%;
+  transform: translateX(-50%);
+  width: 5.5em;
+  height: 0.4em;
+  background-color: black;
+}
+
+.gallows__vert {
+  position: absolute;
+  bottom: 0;
+  left: 25%;
+  width: 0.6em;
+  height: 13.5em;
+  background-color: black;
+}
+
+.gallows__vert-two {
+  position: absolute;
+  top: 1.5em;
+  left: 50%;
+  width: 0.2em;
+  height: 3.7em;
+  background-color: black;
+}
+
+.character {
+  display: flex;
+  justify-content: center;
+}
+
+.character__head {
+  position: absolute;
+  top: 5em;
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  border: 0.3rem solid black;
+}
+
+.character__body {
+  position: absolute;
+  top: 6.5em;
+  width: 0.3em;
+  height: 2.5em;
+  background-color: black;
+}
+
+.character__hand {
+  position: absolute;
+  top: 6.8em;
+  width: 0.3em;
+  height: 1.7em;
+  transform-origin: top;
+  background-color: black;
+}
+
+.hand--left {
+  transform: rotate(30deg);
+}
+
+.hand--right {
+  transform: rotate(-30deg);
+}
+
+.character__leg {
+  position: absolute;
+  top: 9em;
+  width: 0.3em;
+  height: 2em;
+  transform-origin: top;
+  background-color: black;
+}
+
+.leg--left {
+  transform: rotate(20deg);
+}
+
+.leg--right {
+  transform: rotate(-20deg);
+}

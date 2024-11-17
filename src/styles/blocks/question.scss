@@ -1,0 +1,44 @@
+.question__container {
+  width: 100%;
+}
+
+.question__list {
+  display: flex;
+  justify-content: center;
+}
+
+.question__el + .question__el {
+  margin-left: 0.3em;
+}
+
+.question__letter {
+  font-size: 1.3rem;
+  border-bottom: 2px solid black;
+}
+
+.question {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.question__text {
+  margin-left: 0.3rem;
+  font-weight: 700;
+}
+
+.errors {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: -0.7em;
+}
+
+.errors__text {
+  margin: 0;
+}
+
+.errors__numbers {
+  margin: 0 0 0 0.3rem;
+  color: rgb(205, 9, 9);
+}

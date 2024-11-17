@@ -1,0 +1,21 @@
+.keyboard__list {
+  display: flex;
+  margin-top: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.keyboard__el {
+  margin-top: 0.7rem;
+}
+
+.keyboard__el + .keyboard__el {
+  margin-left: 0.3rem;
+}
+
+.keyboard__btn {
+  display: block;
+  padding: 0.5em;
+  color: var(--block-text-color);
+  background-color: var(--block-color);
+}
