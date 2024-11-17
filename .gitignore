@@ -4,3 +4,8 @@ package-lock.json
 gulp-build.zip
 src/styleguide
 src/styleguideFiles
+README.md
+RADME-ru.md
+src-diagram.png
+dist-diagram.png
+styleguide-diagram.png
