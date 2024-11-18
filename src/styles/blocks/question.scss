@@ -1,5 +1,10 @@
+@use "../values.scss" as *;
+
 .question__container {
   width: 100%;
+  @media (min-width: $min-tablet-width) {
+    max-width: 25rem;
+  }
 }
 
 .question__list {

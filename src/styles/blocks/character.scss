@@ -1,9 +1,14 @@
 @use "../values.scss" as *;
 
 .hang {
+  position: relative;
   width: 20em;
   height: 15em;
   margin: 0 auto;
+  @media (min-width: $min-desktop-width) {
+    margin: 0;
+    height: 18em;
+  }
 }
 
 .gallows {
@@ -21,6 +26,9 @@
   width: 17em;
   height: 0.4em;
   background-color: black;
+  @media (min-width: $min-desktop-width) {
+    width: 19em;
+  }
 }
 
 .gallows__goriz-two {
@@ -31,6 +39,9 @@
   width: 5.5em;
   height: 0.4em;
   background-color: black;
+  @media (min-width: $min-desktop-width) {
+    width: 6em;
+  }
 }
 
 .gallows__vert {
@@ -40,6 +51,9 @@
   width: 0.6em;
   height: 13.5em;
   background-color: black;
+  @media (min-width: $min-desktop-width) {
+    height: 16.5em;
+  }
 }
 
 .gallows__vert-two {
@@ -52,6 +66,9 @@
 }
 
 .character {
+  position: absolute;
+  top: 0;
+  left: 50%;
   display: flex;
   justify-content: center;
 }
@@ -63,6 +80,10 @@
   height: 1.5em;
   border-radius: 50%;
   border: 0.3rem solid black;
+  @media (min-width: $min-desktop-width) {
+    width: 2em;
+    height: 2em;
+  }
 }
 
 .character__body {
@@ -71,6 +92,10 @@
   width: 0.3em;
   height: 2.5em;
   background-color: black;
+  @media (min-width: $min-desktop-width) {
+    top: 7em;
+    height: 3em;
+  }
 }
 
 .character__hand {
@@ -80,6 +105,10 @@
   height: 1.7em;
   transform-origin: top;
   background-color: black;
+  @media (min-width: $min-desktop-width) {
+    top: 7.3em;
+    height: 2.2em;
+  }
 }
 
 .hand--left {
@@ -97,6 +126,10 @@
   height: 2em;
   transform-origin: top;
   background-color: black;
+  @media (min-width: $min-desktop-width) {
+    top: 10em;
+    height: 3em;
+  }
 }
 
 .leg--left {
