@@ -1,1 +1,1 @@
-{"version":3,"file":"main.js","sources":[],"sourcesContent":[],"names":[],"mappings":""}
+{"version":3,"sources":["main.js"],"names":["App","app"],"mappings":"OAAOA,QAAS,WAEhB,IAAMC,IAAM,IAAID","file":"main.js","sourcesContent":["import App from \"./app.js\";\n\nconst app = new App();\n"]}

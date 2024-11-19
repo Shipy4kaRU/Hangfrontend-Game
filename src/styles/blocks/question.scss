@@ -16,9 +16,16 @@
   margin-left: 0.3em;
 }
 
-.question__letter {
-  font-size: 1.3rem;
+.question__el {
+  width: 1.4em;
   border-bottom: 2px solid black;
+  padding: 0;
+}
+
+.question__letter {
+  text-align: center;
+  margin: 2em 0 0 0;
+  font-size: 1.3rem;
 }
 
 .question {
