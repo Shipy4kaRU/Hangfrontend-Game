@@ -1,6 +1,6 @@
 import QUESTION_LIST from "./QUESTIONS_LIST.js";
 const questionText = document.querySelector(".jsQuestion");
-const answerText = document.querySelectorAll(".question__letter");
+const answerContainer = document.querySelector(".question__list");
 const errorsNumber = document.querySelector(".jsErrors");
 
 class App {
@@ -15,14 +15,25 @@ class App {
     this._setQuestionText(index);
   }
 
+  _setErrors() {}
+
   _setAnswerText(index) {
     const newAnswerText = QUESTION_LIST[index].answer;
-    answerText.innerHTML = newAnswerText;
+    const arrayAnswerText = newAnswerText.split("");
+    arrayAnswerText.forEach((el) => {
+      const newElement = document.createElement("li");
+      newElement.classList.add("question__el");
+      const innerElement = document.createElement("p");
+      innerElement.classList.add("question__letter");
+      innerElement.textContent = el;
+      newElement.append(innerElement);
+      answerContainer.insertAdjacentElement("beforeend", newElement);
+    });
   }
 
   _setQuestionText(index) {
     const newQuestionText = QUESTION_LIST[index].text;
-    questionText.innerHTML = newQuestionText;
+    questionText.textContent = newQuestionText;
   }
 
   chooseRandomQuestion() {
@@ -38,17 +49,17 @@ class App {
   }
 
   _clearErrors() {
-    errorsNumber.innerHTML = "";
+    errorsNumber.textContent = "";
   }
 
   _clearQuestionText() {
-    questionText.innerHTML = "";
+    questionText.textContent = "";
   }
 
   _clearAnswerText() {
-    answerText.forEach((el) => {
-      el.innerHTML = "";
-    });
+    while (answerContainer.firstChild) {
+      answerContainer.removeChild(answerContainer.firstChild);
+    }
   }
 }
 
