@@ -7,7 +7,8 @@
   margin: 0 auto;
   @media (min-width: $min-desktop-width) {
     margin: 0;
-    height: 18em;
+    width: 30em;
+    height: 25em;
   }
 }
 
@@ -27,7 +28,7 @@
   height: 0.4em;
   background-color: black;
   @media (min-width: $min-desktop-width) {
-    width: 19em;
+    width: 27em;
   }
 }
 
@@ -40,7 +41,7 @@
   height: 0.4em;
   background-color: black;
   @media (min-width: $min-desktop-width) {
-    width: 6em;
+    width: 9em;
   }
 }
 
@@ -52,7 +53,7 @@
   height: 13.5em;
   background-color: black;
   @media (min-width: $min-desktop-width) {
-    height: 16.5em;
+    height: 23.5em;
   }
 }
 
@@ -63,6 +64,9 @@
   width: 0.2em;
   height: 3.7em;
   background-color: black;
+  @media (min-width: $min-desktop-width) {
+    height: 4.2em;
+  }
 }
 
 .character {
@@ -81,8 +85,9 @@
   border-radius: 50%;
   border: 0.3rem solid black;
   @media (min-width: $min-desktop-width) {
-    width: 2em;
-    height: 2em;
+    top: 5.5em;
+    width: 2.1em;
+    height: 2.1em;
   }
 }
 
@@ -93,8 +98,8 @@
   height: 2.5em;
   background-color: black;
   @media (min-width: $min-desktop-width) {
-    top: 7em;
-    height: 3em;
+    top: 7.5em;
+    height: 4em;
   }
 }
 
@@ -106,8 +111,8 @@
   transform-origin: top;
   background-color: black;
   @media (min-width: $min-desktop-width) {
-    top: 7.3em;
-    height: 2.2em;
+    top: 7.8em;
+    height: 2.7em;
   }
 }
 
@@ -127,8 +132,8 @@
   transform-origin: top;
   background-color: black;
   @media (min-width: $min-desktop-width) {
-    top: 10em;
-    height: 3em;
+    top: 11em;
+    height: 4em;
   }
 }
 
