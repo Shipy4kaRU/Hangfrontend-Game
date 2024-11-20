@@ -4,6 +4,7 @@
 @use "./blocks/question.scss" as *;
 @use "./blocks/keyboard.scss" as *;
 @use "./values.scss" as *;
+@use "./blocks/modal.scss" as *;
 
 :root {
   font-size: calc(0.5em + 1vw);

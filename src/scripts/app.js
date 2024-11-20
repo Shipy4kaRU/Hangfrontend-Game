@@ -3,13 +3,21 @@ const questionText = document.querySelector(".jsQuestion");
 const answerContainer = document.querySelector(".question__list");
 const errorsNumber = document.querySelector(".jsErrors");
 const keyboardList = document.querySelector(".keyboard__list");
+const characterContainer = document.querySelector(".character");
+const hangParts = characterContainer.children;
 
 class App {
   #answerText = [];
+  #errors = 0;
   constructor() {
-    this._resetApp();
+    this._clearHang();
     this._setNewQuestion();
     keyboardList.addEventListener("click", this._keyboardClicked.bind(this));
+  }
+
+  _setPartHang() {
+    hangParts[this.#errors].style.display = "block";
+    this.#errors++;
   }
 
   _showLetter(newLetter) {
@@ -43,10 +51,15 @@ class App {
       this.#answerText.includes(newLetter.toLowerCase())
     )
       this._showLetter(newLetter);
+    else {
+      this._setPartHang();
+      this._setErrors();
+    }
   }
 
   _keyboardClicked(e) {
     if (!e.target.classList.contains("keyboard__btn")) return;
+    e.target.closest(".keyboard__btn").setAttribute("disabled", "true");
     const clickedLetter = e.target.textContent;
     this._checkCorrectLetter(clickedLetter);
   }
@@ -55,9 +68,12 @@ class App {
     const index = this.chooseRandomQuestion();
     this._setAnswerText(index);
     this._setQuestionText(index);
+    this._setErrors();
   }
 
-  _setErrors() {}
+  _setErrors() {
+    errorsNumber.textContent = `${this.#errors}/6`;
+  }
 
   _setAnswerText(index) {
     const newAnswerText = QUESTION_LIST[index].answer;
@@ -65,10 +81,6 @@ class App {
     this.#answerText.forEach((el) => {
       const newElement = document.createElement("li");
       newElement.classList.add("question__el");
-      // const innerElement = document.createElement("p");
-      // innerElement.classList.add("question__letter");
-      // // innerElement.textContent = el;
-      // newElement.append(innerElement);
       answerContainer.insertAdjacentElement("beforeend", newElement);
     });
   }
@@ -88,10 +100,18 @@ class App {
     this._clearAnswerText();
     this._clearQuestionText();
     this._clearErrors();
+    this._clearHang();
+  }
+
+  _clearHang() {
+    for (let i = 0; i < hangParts.length; i++) {
+      hangParts[i].style.display = "none";
+    }
   }
 
   _clearErrors() {
-    errorsNumber.textContent = "0/0";
+    this.#errors = 0;
+    this._setErrors();
   }
 
   _clearQuestionText() {

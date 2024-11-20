@@ -29,3 +29,8 @@
 .keyboard__btn:active {
   opacity: 0.2;
 }
+
+.keyboard__btn:disabled {
+  opacity: 0.2;
+  cursor: default;
+}
