@@ -26,7 +26,7 @@
   transform: translateX(-50%);
   width: 17em;
   height: 0.4em;
-  background-color: black;
+  background-color: var(--border);
   @media (min-width: $min-desktop-width) {
     width: 27em;
   }
@@ -39,7 +39,7 @@
   transform: translateX(-50%);
   width: 5.5em;
   height: 0.4em;
-  background-color: black;
+  background-color: var(--border);
   @media (min-width: $min-desktop-width) {
     width: 9em;
   }
@@ -51,7 +51,7 @@
   left: 25%;
   width: 0.6em;
   height: 13.5em;
-  background-color: black;
+  background-color: var(--border);
   @media (min-width: $min-desktop-width) {
     height: 23.5em;
   }
@@ -63,7 +63,7 @@
   left: 50%;
   width: 0.2em;
   height: 3.7em;
-  background-color: black;
+  background-color: var(--border);
   @media (min-width: $min-desktop-width) {
     height: 4.2em;
   }
@@ -83,7 +83,7 @@
   width: 1.5em;
   height: 1.5em;
   border-radius: 50%;
-  border: 0.3rem solid black;
+  border: 0.3rem solid var(--border);
   @media (min-width: $min-desktop-width) {
     top: 5.5em;
     width: 2.1em;
@@ -96,7 +96,7 @@
   top: 6.5em;
   width: 0.3em;
   height: 2.5em;
-  background-color: black;
+  background-color: var(--border);
   @media (min-width: $min-desktop-width) {
     top: 7.5em;
     height: 4em;
@@ -109,7 +109,7 @@
   width: 0.3em;
   height: 1.7em;
   transform-origin: top;
-  background-color: black;
+  background-color: var(--border);
   @media (min-width: $min-desktop-width) {
     top: 7.8em;
     height: 2.7em;
@@ -130,7 +130,7 @@
   width: 0.3em;
   height: 2em;
   transform-origin: top;
-  background-color: black;
+  background-color: var(--border);
   @media (min-width: $min-desktop-width) {
     top: 11em;
     height: 4em;
