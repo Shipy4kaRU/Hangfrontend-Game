@@ -1,3 +1,5 @@
+@use "../values.scss" as *;
+
 .modal {
   position: fixed;
   margin: 0;
@@ -7,10 +9,15 @@
   padding: 1em;
   box-shadow: 0 0 10px black;
   border-radius: 2em;
+  @media (max-width: $max-mobile-width) {
+    width: 85vw;
+  }
 }
 
 .modal div {
   display: flex;
+  max-width: max-content;
+  margin: 0 auto;
 }
 
 .modal__title {
