@@ -6,6 +6,7 @@
   transform: translate(-50%, -50%);
   padding: 1em;
   box-shadow: 0 0 10px black;
+  border-radius: 2em;
 }
 
 .modal div {
@@ -25,4 +26,13 @@
 .modal__answer {
   margin-left: 0.2em;
   color: var(--page-text-color);
+}
+
+.modal__button {
+  display: block;
+  margin: 0 auto;
+  background-color: var(--block-color);
+  color: white;
+  padding: 0.3em 0.5em;
+  border-radius: 0.4em;
 }

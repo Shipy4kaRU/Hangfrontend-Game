@@ -5,6 +5,12 @@ const errorsNumber = document.querySelector(".jsErrors");
 const keyboardList = document.querySelector(".keyboard__list");
 const characterContainer = document.querySelector(".character");
 const hangParts = characterContainer.children;
+const modalWindow = document.querySelector(".modal");
+const modalTitle = document.querySelector(".jsTitle");
+const modalPraise = document.querySelector(".jsPraise");
+const modalMessage = document.querySelector(".jsMessage");
+const modalAnswer = document.querySelector(".jsAnswer");
+const modalButton = document.querySelector(".modal__button");
 
 class App {
   #answerText = [];
@@ -13,6 +19,29 @@ class App {
     this._clearHang();
     this._setNewQuestion();
     keyboardList.addEventListener("click", this._keyboardClicked.bind(this));
+    modalButton.addEventListener("click", () => {
+      this._resetApp();
+      this._setNewQuestion();
+      modalWindow.close();
+    });
+  }
+
+  _setWin() {
+    modalTitle.textContent = "Вы выиграли!";
+    modalPraise.textContent =
+      "Вы оказались хорошим разработчиком! Гордитесь этим.";
+    modalMessage.textContent = "Все верно. Правильный ответ:";
+    modalAnswer.textContent = this.#answerText.join("");
+    modalWindow.showModal();
+  }
+
+  _setLose() {
+    modalTitle.textContent = "Вы проиграли!";
+    modalPraise.textContent =
+      "Вы были близки! Не расстраивайтесь и попробуйте сыграть еще раз.";
+    modalMessage.textContent = "Правильный ответ был:";
+    modalAnswer.textContent = this.#answerText.join("");
+    modalWindow.showModal();
   }
 
   _setPartHang() {
@@ -33,8 +62,6 @@ class App {
       if (el === newLetter.toLowerCase()) acc.push(index);
       return acc;
     }, []);
-    console.log(uppLettersIndex);
-    console.log(lowLettersIndex);
     uppLettersIndex.forEach((el) =>
       lettersList[el].append(innerElement.cloneNode(true))
     );
@@ -44,16 +71,20 @@ class App {
   }
 
   _checkCorrectLetter(newLetter) {
-    console.log(this.#answerText);
-    console.log(keyboardList);
     if (
       this.#answerText.includes(newLetter) ||
       this.#answerText.includes(newLetter.toLowerCase())
-    )
+    ) {
       this._showLetter(newLetter);
-    else {
+      const lettersNumber =
+        document.querySelectorAll(".question__letter").length;
+      if (lettersNumber === this.#answerText.length) {
+        this._setWin();
+      }
+    } else {
       this._setPartHang();
       this._setErrors();
+      if (this.#errors === 6) this._setLose();
     }
   }
 
@@ -96,11 +127,19 @@ class App {
     return randomIndex;
   }
 
+  _resetKeyboard() {
+    const keyboardLetters = document.querySelectorAll(".keyboard__btn");
+    for (let i = 0; i < keyboardLetters.length; i++) {
+      keyboardLetters[i].removeAttribute("disabled");
+    }
+  }
+
   _resetApp() {
     this._clearAnswerText();
     this._clearQuestionText();
     this._clearErrors();
     this._clearHang();
+    this._resetKeyboard();
   }
 
   _clearHang() {
